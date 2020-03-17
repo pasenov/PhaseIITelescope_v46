@@ -1,0 +1,1216 @@
+# macro file for PhaseII.cc
+#
+/control/verbose 2
+/run/verbose 2
+#
+/testem/det/setMatD Silicon
+/testem/det/setSizeZ1 320 um
+/testem/det/setSizeZ2 320 um
+#
+/run/setCut 1 um
+#
+#/process/eLoss/CSDARange true
+#
+/run/initialize
+#
+/gps/particle pi+
+/gps/direction 0 0 -1
+/gps/energy 120 GeV
+/gps/ene/sigma 100 keV
+/gps/position -0.3 -0.65 200 cm
+/gps/pos/type Beam
+/gps/pos/shape Ellipsoid
+/gps/pos/halfx 7.5 mm
+/gps/pos/halfy 7.5 mm
+#/gps/pos/halfz 0.005 mm
+#
+/analysis/setFileName pionPlus
+# 
+/analysis/h1/set 1 198 0 1 MeV    #continuous eLoss for Sensor 1
+/analysis/h1/set 2 198 0 1 MeV    #continuous eLoss for Sensor 2
+/analysis/h1/set 3 198 0 1 MeV   #secondary  eLoss for Sensor 1
+/analysis/h1/set 4 198 0 1 MeV   #secondary  eLoss for Sensor 2
+/analysis/h1/set 5 100 0 100 keV   #tertiary  eLoss for Sensor 1
+/analysis/h1/set 6 100 0 100 keV   #tertiary  eLoss for Sensor 2
+/analysis/h1/set 7 198 0 1 MeV    #total eLoss for Sensor 1
+/analysis/h1/set 8 198 0 1 MeV    #total eLoss for Sensor 2
+/analysis/h1/set 9 3000 0 30 keV    #secondary e- energy spectrum for Sensor 1
+/analysis/h1/set 10 3000 0 30 keV    #secondary e- energy spectrum for Sensor 2
+/analysis/h1/set 11 10000 0 100 keV    #secondary gamma energy spectrum for Sensor 1
+/analysis/h1/set 12 10000 0 100 keV   #secondary gamma energy spectrum for Sensor 2
+/analysis/h1/set 13 1000 0 100 keV   #tertiary e- energy spectrum for Sensor 1
+/analysis/h1/set 14 1000 0 100 keV   #tertiary e- energy spectrum for Sensor 2
+/analysis/h1/set 15 1000 0 100 keV   #tertiary gamma energy spectrum for Sensor 1
+/analysis/h1/set 16 1000 0 100 keV   #tertiary gamma energy spectrum for Sensor 2
+/analysis/h1/set 17 1000 0 0.05 mm    #step size for primary
+/analysis/h1/set 18 1000 0 0.02 mm    #step size for secondaries
+/analysis/h1/set 19 1000 0 0.02 mm    #step size for tertiaries
+/analysis/h1/set 20 1000 0 0.02 mm    #step size for secondaries created in sensors
+/analysis/h1/set 21 100 -1.5 1.5    #x-polarization for secondaries
+/analysis/h1/set 22 100 -1.5 1.5    #y-polarization for secondaries
+/analysis/h1/set 23 100 -1.5 1.5    #z-polarization for secondaries
+/analysis/h1/set 24 100 -1.5 1.5    #x-polarization for tertiaries
+/analysis/h1/set 25 100 -1.5 1.5    #y-polarization for tertiaries
+/analysis/h1/set 26 100 -1.5 1.5    #z-polarization for tertiaries
+/analysis/h1/set 27 100 0 100 cm    #track length for primary
+/analysis/h1/set 28 100 0 500 mm    #total track length of secondaries
+/analysis/h1/set 29 100 0 3 mm      #total track length of tertiaries
+/analysis/h1/set 30 100 0 10 mm     #total track length of secondaries created in sensors
+/analysis/h1/set 31 100 0 0.1 mm    #track length of secondaries created in sensors
+/analysis/h1/set 32 100 0 100000    #number of positrons created in Sensor 1
+/analysis/h1/set 33 100 0 100000    #number of positrons created in Sensor 2
+/analysis/h1/set 34 100 0 100000    #number of electrons created in Sensor 1
+/analysis/h1/set 35 100 0 100000    #number of electrons created in Sensor 1
+/analysis/h1/set 36 100 0 100000    #number of pi+ created in Sensor 1
+/analysis/h1/set 37 100 0 100000    #number of pi+ created in Sensor 2
+/analysis/h1/set 38 100 0 100000    #number of pi- created in Sensor 1
+/analysis/h1/set 39 100 0 100000    #number of pi- created in Sensor 2
+/analysis/h1/set 40 100 0 100000    #number of mu+ created in Sensor 1
+/analysis/h1/set 41 100 0 100000    #number of mu+ created in Sensor 2
+/analysis/h1/set 42 100 0 100000    #number of mu- created in Sensor 1
+/analysis/h1/set 43 100 0 100000    #number of mu- created in Sensor 2
+/analysis/h1/set 44 100 0 100000    #number of delta e- created in Sensor 1 that have reached Sensor 2
+/analysis/h1/set 45 100 0 100000    #number of delta e- created in Sensor 2 that have reached Sensor 1
+/analysis/h1/set 46 100 0 100000    #number of positrons created before Sensor 1
+/analysis/h1/set 47 100 0 100000    #number of electrons created before Sensor 1
+/analysis/h1/set 48 100 0 100000    #number of positrons created between Sensor 1 and Sensor 2
+/analysis/h1/set 49 100 0 100000    #number of electrons created between Sensor 1 and Sensor 2
+/analysis/h1/set 50 100 0 100000    #number of positrons created after Sensor 2
+/analysis/h1/set 51 100 0 100000    #number of electrons created after Sensor 2
+
+/analysis/h1/set 52 1000 0 5 MeV    #continuous eLoss for strip a 505 Sensor 1
+/analysis/h1/setXaxis 52 "continuous eLoss for strip a 505 Sensor 1"
+/analysis/h1/setYaxis 52 "number of entries per bin"
+/analysis/h1/set 53 1000 0 5 MeV    #continuous eLoss for strip a 506 Sensor 1
+/analysis/h1/setXaxis 53 "continuous eLoss for strip a 506 Sensor 1"
+/analysis/h1/setYaxis 53 "number of entries per bin"
+/analysis/h1/set 54 1000 0 5 MeV    #continuous eLoss for strip a 507 Sensor 1
+/analysis/h1/setXaxis 54 "continuous eLoss for strip a 507 Sensor 1"
+/analysis/h1/setYaxis 54 "number of entries per bin"
+/analysis/h1/set 55 1000 0 5 MeV    #continuous eLoss for strip a 508 Sensor 1
+/analysis/h1/setXaxis 55 "continuous eLoss for strip a 508 Sensor 1"
+/analysis/h1/setYaxis 55 "number of entries per bin"
+/analysis/h1/set 56 1000 0 5 MeV    #continuous eLoss for strip a 509 Sensor 1
+/analysis/h1/setXaxis 56 "continuous eLoss for strip a 509 Sensor 1"
+/analysis/h1/setYaxis 56 "number of entries per bin"
+/analysis/h1/set 57 1000 0 5 MeV    #continuous eLoss for strip a 510 Sensor 1
+/analysis/h1/setXaxis 57 "continuous eLoss for strip a 510 Sensor 1"
+/analysis/h1/setYaxis 57 "number of entries per bin"
+/analysis/h1/set 58 1000 0 5 MeV    #continuous eLoss for strip a 511 Sensor 1
+/analysis/h1/setXaxis 58 "continuous eLoss for strip a 511 Sensor 1"
+/analysis/h1/setYaxis 58 "number of entries per bin"
+/analysis/h1/set 59 1000 0 5 MeV    #continuous eLoss for strip a 512 Sensor 1
+/analysis/h1/setXaxis 59 "continuous eLoss for strip a 512 Sensor 1"
+/analysis/h1/setYaxis 59 "number of entries per bin"
+/analysis/h1/set 60 1000 0 5 MeV    #continuous eLoss for strip b 505 Sensor 1
+/analysis/h1/setXaxis 60 "continuous eLoss for strip b 505 Sensor 1"
+/analysis/h1/setYaxis 60 "number of entries per bin"
+/analysis/h1/set 61 1000 0 5 MeV    #continuous eLoss for strip b 506 Sensor 1
+/analysis/h1/setXaxis 61 "continuous eLoss for strip b 506 Sensor 1"
+/analysis/h1/setYaxis 61 "number of entries per bin"
+/analysis/h1/set 62 1000 0 5 MeV    #continuous eLoss for strip b 507 Sensor 1
+/analysis/h1/setXaxis 62 "continuous eLoss for strip b 507 Sensor 1"
+/analysis/h1/setYaxis 62 "number of entries per bin"
+/analysis/h1/set 63 1000 0 5 MeV    #continuous eLoss for strip b 508 Sensor 1
+/analysis/h1/setXaxis 63 "continuous eLoss for strip b 508 Sensor 1"
+/analysis/h1/setYaxis 63 "number of entries per bin"
+/analysis/h1/set 64 1000 0 5 MeV    #continuous eLoss for strip b 509 Sensor 1
+/analysis/h1/setXaxis 64 "continuous eLoss for strip b 509 Sensor 1"
+/analysis/h1/setYaxis 64 "number of entries per bin"
+/analysis/h1/set 65 1000 0 5 MeV    #continuous eLoss for strip b 510 Sensor 1
+/analysis/h1/setXaxis 65 "continuous eLoss for strip b 510 Sensor 1"
+/analysis/h1/setYaxis 65 "number of entries per bin"
+/analysis/h1/set 66 1000 0 5 MeV    #continuous eLoss for strip b 511 Sensor 1
+/analysis/h1/setXaxis 66 "continuous eLoss for strip b 511 Sensor 1"
+/analysis/h1/setYaxis 66 "number of entries per bin"
+/analysis/h1/set 67 1000 0 5 MeV    #continuous eLoss for strip b 512 Sensor 1
+/analysis/h1/setXaxis 67 "continuous eLoss for strip b 512 Sensor 1"
+/analysis/h1/setYaxis 67 "number of entries per bin"
+/analysis/h1/set 68 1000 0 5 MeV    #continuous eLoss for strip a 505 Sensor 2
+/analysis/h1/setXaxis 68 "continuous eLoss for strip a 505 Sensor 2"
+/analysis/h1/setYaxis 68 "number of entries per bin"
+/analysis/h1/set 69 1000 0 5 MeV    #continuous eLoss for strip a 506 Sensor 2
+/analysis/h1/setXaxis 69 "continuous eLoss for strip a 506 Sensor 2"
+/analysis/h1/setYaxis 69 "number of entries per bin"
+/analysis/h1/set 70 1000 0 5 MeV    #continuous eLoss for strip a 507 Sensor 2
+/analysis/h1/setXaxis 70 "continuous eLoss for strip a 507 Sensor 2"
+/analysis/h1/setYaxis 70 "number of entries per bin"
+/analysis/h1/set 71 1000 0 5 MeV    #continuous eLoss for strip a 508 Sensor 2
+/analysis/h1/setXaxis 71 "continuous eLoss for strip a 508 Sensor 2"
+/analysis/h1/setYaxis 71 "number of entries per bin"
+/analysis/h1/set 72 1000 0 5 MeV    #continuous eLoss for strip a 509 Sensor 2
+/analysis/h1/setXaxis 72 "continuous eLoss for strip a 509 Sensor 2"
+/analysis/h1/setYaxis 72 "number of entries per bin"
+/analysis/h1/set 73 1000 0 5 MeV    #continuous eLoss for strip a 510 Sensor 2
+/analysis/h1/setXaxis 73 "continuous eLoss for strip a 510 Sensor 2"
+/analysis/h1/setYaxis 73 "number of entries per bin"
+/analysis/h1/set 74 1000 0 5 MeV    #continuous eLoss for strip a 511 Sensor 2
+/analysis/h1/setXaxis 74 "continuous eLoss for strip a 511 Sensor 2"
+/analysis/h1/setYaxis 74 "number of entries per bin"
+/analysis/h1/set 75 1000 0 5 MeV    #continuous eLoss for strip a 512 Sensor 2
+/analysis/h1/setXaxis 75 "continuous eLoss for strip a 512 Sensor 2"
+/analysis/h1/setYaxis 75 "number of entries per bin"
+/analysis/h1/set 76 1000 0 5 MeV    #continuous eLoss for strip b 505 Sensor 2
+/analysis/h1/setXaxis 76 "continuous eLoss for strip b 505 Sensor 2"
+/analysis/h1/setYaxis 76 "number of entries per bin"
+/analysis/h1/set 77 1000 0 5 MeV    #continuous eLoss for strip b 506 Sensor 2
+/analysis/h1/setXaxis 77 "continuous eLoss for strip b 506 Sensor 2"
+/analysis/h1/setYaxis 77 "number of entries per bin"
+/analysis/h1/set 78 1000 0 5 MeV    #continuous eLoss for strip b 507 Sensor 2
+/analysis/h1/setXaxis 78 "continuous eLoss for strip b 507 Sensor 2"
+/analysis/h1/setYaxis 78 "number of entries per bin"
+/analysis/h1/set 79 1000 0 5 MeV    #continuous eLoss for strip b 508 Sensor 2
+/analysis/h1/setXaxis 79 "continuous eLoss for strip b 508 Sensor 2"
+/analysis/h1/setYaxis 79 "number of entries per bin"
+/analysis/h1/set 80 1000 0 5 MeV    #continuous eLoss for strip b 509 Sensor 2
+/analysis/h1/setXaxis 80 "continuous eLoss for strip b 509 Sensor 2"
+/analysis/h1/setYaxis 80 "number of entries per bin"
+/analysis/h1/set 81 1000 0 5 MeV    #continuous eLoss for strip b 510 Sensor 2
+/analysis/h1/setXaxis 81 "continuous eLoss for strip b 510 Sensor 2"
+/analysis/h1/setYaxis 81 "number of entries per bin"
+/analysis/h1/set 82 1000 0 5 MeV    #continuous eLoss for strip b 511 Sensor 2
+/analysis/h1/setXaxis 82 "continuous eLoss for strip b 511 Sensor 2"
+/analysis/h1/setYaxis 82 "number of entries per bin"
+/analysis/h1/set 83 1000 0 5 MeV    #continuous eLoss for strip b 512 Sensor 2
+/analysis/h1/setXaxis 83 "continuous eLoss for strip b 512 Sensor 2"
+/analysis/h1/setYaxis 83 "number of entries per bin"
+
+/analysis/h1/set 84 1000 0 100000    #number of electrons created in strip a 505 Sensor 1
+/analysis/h1/set 85 1000 0 100000    #number of electrons created in strip a 506 Sensor 1
+/analysis/h1/set 86 1000 0 100000    #number of electrons created in strip a 507 Sensor 1
+/analysis/h1/set 87 1000 0 100000    #number of electrons created in strip a 508 Sensor 1
+/analysis/h1/set 88 1000 0 100000    #number of electrons created in strip a 509 Sensor 1
+/analysis/h1/set 89 1000 0 100000    #number of electrons created in strip a 510 Sensor 1
+/analysis/h1/set 90 1000 0 100000    #number of electrons created in strip a 511 Sensor 1
+/analysis/h1/set 91 1000 0 100000    #number of electrons created in strip a 512 Sensor 1
+/analysis/h1/set 92 1000 0 100000    #number of electrons created in strip b 505 Sensor 1
+/analysis/h1/set 93 1000 0 100000    #number of electrons created in strip b 506 Sensor 1
+/analysis/h1/set 94 1000 0 100000    #number of electrons created in strip b 507 Sensor 1
+/analysis/h1/set 95 1000 0 100000    #number of electrons created in strip b 508 Sensor 1
+/analysis/h1/set 96 1000 0 100000    #number of electrons created in strip b 509 Sensor 1
+/analysis/h1/set 97 1000 0 100000    #number of electrons created in strip b 510 Sensor 1
+/analysis/h1/set 98 1000 0 100000    #number of electrons created in strip b 511 Sensor 1
+/analysis/h1/set 99 1000 0 100000    #number of electrons created in strip b 512 Sensor 1
+/analysis/h1/set 100 1000 0 100000    #number of electrons created in strip a 505 Sensor 2
+/analysis/h1/set 101 1000 0 100000    #number of electrons created in strip a 506 Sensor 2
+/analysis/h1/set 102 1000 0 100000    #number of electrons created in strip a 507 Sensor 2
+/analysis/h1/set 103 1000 0 100000    #number of electrons created in strip a 508 Sensor 2
+/analysis/h1/set 104 1000 0 100000    #number of electrons created in strip a 509 Sensor 2
+/analysis/h1/set 105 1000 0 100000    #number of electrons created in strip a 510 Sensor 2
+/analysis/h1/set 106 1000 0 100000    #number of electrons created in strip a 511 Sensor 2
+/analysis/h1/set 107 1000 0 100000    #number of electrons created in strip a 512 Sensor 2
+/analysis/h1/set 108 1000 0 100000    #number of electrons created in strip b 505 Sensor 2
+/analysis/h1/set 109 1000 0 100000    #number of electrons created in strip b 506 Sensor 2
+/analysis/h1/set 110 1000 0 100000    #number of electrons created in strip b 507 Sensor 2
+/analysis/h1/set 111 1000 0 100000    #number of electrons created in strip b 508 Sensor 2
+/analysis/h1/set 112 1000 0 100000    #number of electrons created in strip b 509 Sensor 2
+/analysis/h1/set 113 1000 0 100000    #number of electrons created in strip b 510 Sensor 2
+/analysis/h1/set 114 1000 0 100000    #number of electrons created in strip b 511 Sensor 2
+/analysis/h1/set 115 1000 0 100000    #number of electrons created in strip b 512 Sensor 2
+
+/analysis/h1/set 116 100 0 0.00010         #deflection angle of primary particle
+/analysis/h1/setXaxis 116 "deflection angle of primary particle (rad)"
+/analysis/h1/setYaxis 116 "number of entries per bin"
+/analysis/h1/set 117 100 0 500 um     #distance between midpoint of primary inside Sensor 1 and AJ
+/analysis/h1/setXaxis 117 "distance between midpoint of primary inside Sensor 1 and AJ (um)"
+/analysis/h1/setYaxis 117 "number of entries per bin"
+/analysis/h1/set 118 100 0 500 um     #distance between midpoint of primary inside Sensor 2 and AJ
+/analysis/h1/setXaxis 118 "distance between midpoint of primary inside Sensor 2 and AJ (um)"
+/analysis/h1/setYaxis 118 "number of entries per bin"
+/analysis/h1/set 119 101 -0.01005 0.01005 cm    #2S first-plane residuals in global x-direction E'Ex
+/analysis/h1/setXaxis 119 "2S first-plane residuals in global x-direction E'Ex (cm)"
+/analysis/h1/setYaxis 119 "number of entries per bin"
+/analysis/h1/set 120 101 -0.01005 0.01005 cm     #2S first-plane residuals in global y-direction E'Ey
+/analysis/h1/setXaxis 120 "2S first-plane residuals in global y-direction E'Ey (cm)"
+/analysis/h1/setYaxis 120 "number of entries per bin"
+/analysis/h1/set 121 101 -0.01005 0.01005 cm     #2S second-plane residuals in global x-direction F'Fx
+/analysis/h1/setXaxis 121 "2S second-plane residuals in global x-direction F'Fx (cm)"
+/analysis/h1/setYaxis 121 "number of entries per bin"
+/analysis/h1/set 122 101 -0.01005 0.01005 cm     #2S second-plane residuals in global y-direction F'Fy
+/analysis/h1/setXaxis 122 "2S second-plane residuals in global y-direction F'Fy (cm)"
+/analysis/h1/setYaxis 122 "number of entries per bin"
+
+/analysis/h1/set 123 100000 0 100000    #number of hits for strip a 505 Sensor 1
+/analysis/h1/setXaxis 123 "number of hits for strip a 505 Sensor 1"
+/analysis/h1/setYaxis 123 "number of entries per bin"
+/analysis/h1/set 124 100000 0 100000    #number of hits for strip a 506 Sensor 1
+/analysis/h1/setXaxis 124 "number of hits for strip a 506 Sensor 1"
+/analysis/h1/setYaxis 124 "number of entries per bin"
+/analysis/h1/set 125 100000 0 100000    #number of hits for strip a 507 Sensor 1
+/analysis/h1/setXaxis 125 "number of hits for strip a 507 Sensor 1"
+/analysis/h1/setYaxis 125 "number of entries per bin"
+/analysis/h1/set 126 100000 0 100000    #number of hits for strip a 508 Sensor 1
+/analysis/h1/setXaxis 126 "number of hits for strip a 508 Sensor 1"
+/analysis/h1/setYaxis 126 "number of entries per bin"
+/analysis/h1/set 127 100000 0 100000    #number of hits for strip a 509 Sensor 1
+/analysis/h1/setXaxis 127 "number of hits for strip a 509 Sensor 1"
+/analysis/h1/setYaxis 127 "number of entries per bin"
+/analysis/h1/set 128 100000 0 100000    #number of hits for strip a 510 Sensor 1
+/analysis/h1/setXaxis 128 "number of hits for strip a 510 Sensor 1"
+/analysis/h1/setYaxis 128 "number of entries per bin"
+/analysis/h1/set 129 100000 0 100000    #number of hits for strip a 511 Sensor 1
+/analysis/h1/setXaxis 129 "number of hits for strip a 511 Sensor 1"
+/analysis/h1/setYaxis 129 "number of entries per bin"
+/analysis/h1/set 130 100000 0 100000    #number of hits for strip a 512 Sensor 1
+/analysis/h1/setXaxis 130 "number of hits for strip a 512 Sensor 1"
+/analysis/h1/setYaxis 130 "number of entries per bin"
+/analysis/h1/set 131 100000 0 100000    #number of hits for strip b 505 Sensor 1
+/analysis/h1/setXaxis 131 "number of hits for strip b 505 Sensor 1"
+/analysis/h1/setYaxis 131 "number of entries per bin"
+/analysis/h1/set 132 100000 0 100000    #number of hits for strip b 506 Sensor 1
+/analysis/h1/setXaxis 132 "number of hits for strip b 506 Sensor 1"
+/analysis/h1/setYaxis 132 "number of entries per bin"
+/analysis/h1/set 133 100000 0 100000    #number of hits for strip b 507 Sensor 1
+/analysis/h1/setXaxis 133 "number of hits for strip b 507 Sensor 1"
+/analysis/h1/setYaxis 133 "number of entries per bin"
+/analysis/h1/set 134 100000 0 100000    #continuous eLoss for strip b 508 Sensor 1
+/analysis/h1/setXaxis 134 "continuous eLoss for strip b 508 Sensor 1"
+/analysis/h1/setYaxis 134 "number of entries per bin"
+/analysis/h1/set 135 100000 0 100000    #number of hits for strip b 509 Sensor 1
+/analysis/h1/setXaxis 135 "number of hits for strip b 509 Sensor 1"
+/analysis/h1/setYaxis 135 "number of entries per bin"
+/analysis/h1/set 136 100000 0 100000    #number of hits for strip b 510 Sensor 1
+/analysis/h1/setXaxis 136 "number of hits for strip b 510 Sensor 1"
+/analysis/h1/setYaxis 136 "number of entries per bin"
+/analysis/h1/set 137 100000 0 100000   #number of hits for strip b 511 Sensor 1
+/analysis/h1/setXaxis 137 "number of hits for strip b 511 Sensor 1"
+/analysis/h1/setYaxis 137 "number of entries per bin"
+/analysis/h1/set 138 100000 0 100000    #number of hits for strip b 512 Sensor 1
+/analysis/h1/setXaxis 138 "number of hits for strip b 512 Sensor 1"
+/analysis/h1/setYaxis 138 "number of entries per bin"
+/analysis/h1/set 139 100000 0 100000    #number of hits for strip a 505 Sensor 2
+/analysis/h1/setXaxis 139 "number of hits for strip a 505 Sensor 2"
+/analysis/h1/setYaxis 139 "number of entries per bin"
+/analysis/h1/set 140 100000 0 100000    #number of hits for strip a 506 Sensor 2
+/analysis/h1/setXaxis 140 "number of hits for strip a 506 Sensor 2"
+/analysis/h1/setYaxis 140 "number of entries per bin"
+/analysis/h1/set 141 100000 0 100000    #number of hits for strip a 507 Sensor 2
+/analysis/h1/setXaxis 141 "number of hits for strip a 507 Sensor 2"
+/analysis/h1/setYaxis 141 "number of entries per bin"
+/analysis/h1/set 142 100000 0 100000    #number of hits for strip a 508 Sensor 2
+/analysis/h1/setXaxis 142 "number of hits for strip a 508 Sensor 2"
+/analysis/h1/setYaxis 142 "number of entries per bin"
+/analysis/h1/set 143 100000 0 100000    #number of hits for strip a 509 Sensor 2
+/analysis/h1/setXaxis 143 "number of hits for strip a 509 Sensor 2"
+/analysis/h1/setYaxis 143 "number of entries per bin"
+/analysis/h1/set 144 100000 0 100000    #number of hits for strip a 510 Sensor 2
+/analysis/h1/setXaxis 144 "number of hits for strip a 510 Sensor 2"
+/analysis/h1/setYaxis 144 "number of entries per bin"
+/analysis/h1/set 145 100000 0 100000    #number of hits for strip a 511 Sensor 2
+/analysis/h1/setXaxis 145 "number of hits for strip a 511 Sensor 2"
+/analysis/h1/setYaxis 145 "number of entries per bin"
+/analysis/h1/set 146 100000 0 100000    #number of hits for strip a 512 Sensor 2
+/analysis/h1/setXaxis 146 "number of hits for strip a 512 Sensor 2"
+/analysis/h1/setYaxis 146 "number of entries per bin"
+/analysis/h1/set 147 100000 0 100000    #number of hits for strip b 505 Sensor 2
+/analysis/h1/setXaxis 147 "number of hits for strip b 505 Sensor 2"
+/analysis/h1/setYaxis 147 "number of entries per bin"
+/analysis/h1/set 148 100000 0 100000    #number of hits for strip b 506 Sensor 2
+/analysis/h1/setXaxis 148 "number of hits for strip b 506 Sensor 2"
+/analysis/h1/setYaxis 148 "number of entries per bin"
+/analysis/h1/set 149 100000 0 100000    #number of hits for strip b 507 Sensor 2
+/analysis/h1/setXaxis 149 "number of hits for strip b 507 Sensor 2"
+/analysis/h1/setYaxis 149 "number of entries per bin"
+/analysis/h1/set 150 100000 0 100000    #number of hits for strip b 508 Sensor 2
+/analysis/h1/setXaxis 150 "number of hits for strip b 508 Sensor 2"
+/analysis/h1/setYaxis 150 "number of entries per bin"
+/analysis/h1/set 151 100000 0 100000    #number of hits for strip b 509 Sensor 2
+/analysis/h1/setXaxis 151 "number of hits for strip b 509 Sensor 2"
+/analysis/h1/setYaxis 151 "number of entries per bin"
+/analysis/h1/set 152 100000 0 100000    #number of hits for strip b 510 Sensor 2
+/analysis/h1/setXaxis 152 "number of hits for strip b 510 Sensor 2"
+/analysis/h1/setYaxis 152 "number of entries per bin"
+/analysis/h1/set 153 100000 0 100000    #number of hits for strip b 511 Sensor 2
+/analysis/h1/setXaxis 153 "number of hits for strip b 511 Sensor 2"
+/analysis/h1/setYaxis 153 "number of entries per bin"
+/analysis/h1/set 154 100000 0 100000    #number of hits for strip b 512 Sensor 2
+/analysis/h1/setXaxis 154 "number of hits for strip b 512 Sensor 2"
+/analysis/h1/setYaxis 154 "number of entries per bin"
+
+/analysis/h1/set 155 1000 0 100000    #charge in Sensor 1 [e-] corresponding to the deposited energy in Sensor 1
+/analysis/h1/setXaxis 155 "charge in Sensor 1 [e-] corresponding to the deposited energy in Sensor 1"
+/analysis/h1/setYaxis 155 "number of entries per bin"
+/analysis/h1/set 156 1000 0 100000    #charge in Sensor 2 [e-] corresponding to the deposited energy in Sensor 2
+/analysis/h1/setXaxis 156 "charge in Sensor 2 [e-] corresponding to the deposited energy in Sensor 2"
+/analysis/h1/setYaxis 158 "number of entries per bin"
+
+/analysis/h1/set 157 1000 0 50000    #charge in strip a 505 Sensor 1 [e]
+/analysis/h1/setXaxis 157 "charge in strip a 505 Sensor 1 [e]"
+/analysis/h1/setYaxis 157 "number of entries per bin"
+/analysis/h1/set 158 1000 0 50000    #charge in strip a 506 Sensor 1 [e]
+/analysis/h1/setXaxis 158 "charge in strip a 506 Sensor 1 [e]"
+/analysis/h1/setYaxis 158 "number of entries per bin"
+/analysis/h1/set 159 1000 0 50000    #charge in strip a 507 Sensor 1 [e]
+/analysis/h1/setXaxis 159 "charge in strip a 507 Sensor 1 [e]"
+/analysis/h1/setYaxis 159 "number of entries per bin"
+/analysis/h1/set 160 1000 0 50000   #charge in strip a 508 Sensor 1 [e]
+/analysis/h1/setXaxis 160 "charge in strip a 508 Sensor 1 [e]"
+/analysis/h1/setYaxis 160 "number of entries per bin"
+/analysis/h1/set 161 1000 0 50000    #charge in strip a 509 Sensor 1 [e]
+/analysis/h1/setXaxis 161 "charge in strip a 509 Sensor 1 [e]"
+/analysis/h1/setYaxis 161 "number of entries per bin"
+/analysis/h1/set 162 1000 0 50000    #charge in strip a 510 Sensor 1 [e]
+/analysis/h1/setXaxis 162 "charge in strip a 510 Sensor 1 [e]"
+/analysis/h1/setYaxis 162 "number of entries per bin"
+/analysis/h1/set 163 1000 0 50000    #charge in strip a 511 Sensor 1 [e]
+/analysis/h1/setXaxis 163 "charge in strip a 511 Sensor 1 [e]"
+/analysis/h1/setYaxis 163 "number of entries per bin"
+/analysis/h1/set 164 1000 0 50000    #charge in strip a 512 Sensor 1 [e]
+/analysis/h1/setXaxis 164 "charge in strip a 512 Sensor 1 [e]"
+/analysis/h1/setYaxis 164 "number of entries per bin"
+/analysis/h1/set 165 1000 0 50000    #charge in strip b 505 Sensor 1 [e]
+/analysis/h1/setXaxis 165 "charge in strip b 505 Sensor 1 [e]"
+/analysis/h1/setYaxis 165 "number of entries per bin"
+/analysis/h1/set 166 1000 0 50000    #charge in strip b 506 Sensor 1 [e]
+/analysis/h1/setXaxis 166 "charge in strip b 506 Sensor 1 [e]"
+/analysis/h1/setYaxis 166 "number of entries per bin"
+/analysis/h1/set 167 1000 0 50000    #charge in strip b 507 Sensor 1 [e]
+/analysis/h1/setXaxis 167 "charge in strip b 507 Sensor 1 [e]"
+/analysis/h1/setYaxis 167 "number of entries per bin"
+/analysis/h1/set 168 1000 0 50000    #charge in strip b 508 Sensor 1 [e]
+/analysis/h1/setXaxis 168 "charge in strip b 508 Sensor 1 [e]"
+/analysis/h1/setYaxis 168 "number of entries per bin"
+/analysis/h1/set 169 1000 0 50000    #charge in strip b 509 Sensor 1 [e]
+/analysis/h1/setXaxis 169 "charge in strip b 509 Sensor 1 [e]"
+/analysis/h1/setYaxis 169 "number of entries per bin"
+/analysis/h1/set 170 1000 0 50000    #charge in strip b 510 Sensor 1 [e]
+/analysis/h1/setXaxis 170 "charge in strip b 510 Sensor 1 [e]"
+/analysis/h1/setYaxis 170 "number of entries per bin"
+/analysis/h1/set 171 1000 0 50000    #charge in strip b 511 Sensor 1 [e]
+/analysis/h1/setXaxis 171 "charge in strip b 511 Sensor 1 [e]"
+/analysis/h1/setYaxis 171 "number of entries per bin"
+/analysis/h1/set 172 1000 0 50000    #charge in strip b 512 Sensor 1 [e]
+/analysis/h1/setXaxis 172 "charge in strip b 512 Sensor 1 [e]"
+/analysis/h1/setYaxis 172 "number of entries per bin"
+/analysis/h1/set 173 1000 0 50000    #charge in strip a 505 Sensor 2 [e]
+/analysis/h1/setXaxis 173 "charge in strip a 505 Sensor 2 [e]"
+/analysis/h1/setYaxis 173 "number of entries per bin"
+/analysis/h1/set 174 1000 0 50000    #charge in strip a 506 Sensor 2 [e]
+/analysis/h1/setXaxis 174 "charge in strip a 506 Sensor 2 [e]"
+/analysis/h1/setYaxis 174 "number of entries per bin"
+/analysis/h1/set 175 1000 0 50000    #charge in strip a 507 Sensor 2 [e]
+/analysis/h1/setXaxis 175 "charge in strip a 507 Sensor 2 [e]"
+/analysis/h1/setYaxis 175 "number of entries per bin"
+/analysis/h1/set 176 1000 0 50000    #charge in strip a 508 Sensor 2 [e]
+/analysis/h1/setXaxis 176 "charge in strip a 508 Sensor 2 [e]"
+/analysis/h1/setYaxis 176 "number of entries per bin"
+/analysis/h1/set 177 1000 0 50000    #charge in strip a 509 Sensor 2 [e]
+/analysis/h1/setXaxis 177 "charge in strip a 509 Sensor 2 [e]"
+/analysis/h1/setYaxis 177 "number of entries per bin"
+/analysis/h1/set 176 1000 0 50000    #charge in strip a 510 Sensor 2 [e]
+/analysis/h1/setXaxis 178 "charge in strip a 510 Sensor 2 [e]"
+/analysis/h1/setYaxis 178 "number of entries per bin"
+/analysis/h1/set 179 1000 0 50000    #charge in strip a 511 Sensor 2 [e]
+/analysis/h1/setXaxis 179 "charge in strip a 511 Sensor 2 [e]"
+/analysis/h1/setYaxis 179 "number of entries per bin"
+/analysis/h1/set 180 1000 0 50000    #charge in strip a 512 Sensor 2 [e]
+/analysis/h1/setXaxis 180 "charge in strip a 512 Sensor 2 [e]"
+/analysis/h1/setYaxis 180 "number of entries per bin"
+/analysis/h1/set 181 1000 0 50000    #charge in strip b 505 Sensor 2 [e]
+/analysis/h1/setXaxis 181 "charge in strip b 505 Sensor 2 [e]"
+/analysis/h1/setYaxis 181 "number of entries per bin"
+/analysis/h1/set 182 1000 0 50000    #charge in strip b 506 Sensor 2 [e]
+/analysis/h1/setXaxis 182 "charge in strip b 506 Sensor 2 [e]"
+/analysis/h1/setYaxis 182 "number of entries per bin"
+/analysis/h1/set 183 1000 0 50000    #charge in strip b 507 Sensor 2 [e]
+/analysis/h1/setXaxis 183 "charge in strip b 507 Sensor 2 [e]"
+/analysis/h1/setYaxis 183 "number of entries per bin"
+/analysis/h1/set 184 1000 0 50000    #charge in strip b 508 Sensor 2 [e]
+/analysis/h1/setXaxis 184 "charge in strip b 508 Sensor 2 [e]"
+/analysis/h1/setYaxis 184 "number of entries per bin"
+/analysis/h1/set 185 1000 0 50000    #charge in strip b 509 Sensor 2 [e]
+/analysis/h1/setXaxis 185 "charge in strip b 509 Sensor 2 [e]"
+/analysis/h1/setYaxis 185 "number of entries per bin"
+/analysis/h1/set 186 1000 0 50000    #charge in strip b 510 Sensor 2 [e]
+/analysis/h1/setXaxis 186 "charge in strip b 510 Sensor 2 [e]"
+/analysis/h1/setYaxis 186 "number of entries per bin"
+/analysis/h1/set 187 1000 0 50000    #charge in strip b 511 Sensor 2 [e]
+/analysis/h1/setXaxis 187 "charge in strip b 511 Sensor 2 [e]"
+/analysis/h1/setYaxis 187 "number of entries per bin"
+/analysis/h1/set 188 1000 0 50000    #charge in strip b 512 Sensor 2 [e]
+/analysis/h1/setXaxis 188 "charge in strip b 512 Sensor 2 [e]"
+/analysis/h1/setYaxis 188 "number of entries per bin"
+
+/analysis/h1/set 189 6 -0.5 5.5    #cluster size per event (number of strips): Sensor 1
+/analysis/h1/setXaxis 189 "cluster size per event (number of strips): Sensor 1"
+/analysis/h1/setYaxis 189 "number of entries per bin"
+/analysis/h1/set 190 6 -0.5 5.5    #cluster size per event (number of strips): Sensor 2
+/analysis/h1/setXaxis 190 "cluster size per event (number of strips): Sensor 2"
+/analysis/h1/setYaxis 190 "number of entries per bin"
+
+/analysis/h1/set 191 1000 -55000 -45000 um  #reconstructed x-position of primary in sensor 1
+/analysis/h1/setXaxis 191 "reconstructed x-position of primary in sensor 1 (cm)"
+/analysis/h1/setYaxis 191 "number of entries per bin"
+/analysis/h1/set 192 1000 -55000 -45000 um  #reconstructed y-position of primary in sensor 1
+/analysis/h1/setXaxis 192 "reconstructed y-position of primary in sensor 1 (cm)"
+/analysis/h1/setYaxis 192 "number of entries per bin"
+/analysis/h1/set 193 198 -2 0 mm     #reconstructed z-position of primary in sensor 1
+/analysis/h1/setXaxis 193 "reconstructed z-position of primary in sensor 1 (cm)"
+/analysis/h1/setYaxis 193 "number of entries per bin"
+
+/analysis/h1/set 194 1000 -55000 -45000 um  #average x-position of primary in sensor 2
+/analysis/h1/setXaxis 194 "average x-position of primary in sensor 2 (cm)"
+/analysis/h1/setYaxis 194 "number of entries per bin"
+/analysis/h1/set 195 1000 -55000 -45000 um  #average y-position of primary in sensor 2
+/analysis/h1/setXaxis 195 "average y-position of primary in sensor 2 (cm)"
+/analysis/h1/setYaxis 195 "number of entries per bin"
+/analysis/h1/set 196 198  0 2 mm     #average z-position of primary in sensor 2
+/analysis/h1/setXaxis 196 "average z-position of primary in sensor 2 (cm)"
+/analysis/h1/setYaxis 196 "number of entries per bin"
+
+/analysis/h1/set 197 6 -0.5 5    #cluster size per event (number of pixels): BPIX module 1
+/analysis/h1/setXaxis 197 "cluster size per event (number of pixels): BPIX module 1"
+/analysis/h1/setYaxis 197 "number of entries per bin"
+/analysis/h1/set 198 6 -0.5 5    #cluster size per event (number of pixels): BPIX module 2
+/analysis/h1/setXaxis 198 "cluster size per event (number of pixels): BPIX module 2"
+/analysis/h1/setYaxis 198 "number of entries per bin"
+/analysis/h1/set 199 6 -0.5 5    #cluster size per event (number of pixels): BPIX module 3
+/analysis/h1/setXaxis 199 "cluster size per event (number of pixels): BPIX module 3"
+/analysis/h1/setYaxis 199 "number of entries per bin"
+/analysis/h1/set 200 6 -0.5 5    #cluster size per event (number of pixels): BPIX module 4
+/analysis/h1/setXaxis 200 "cluster size per event (number of pixels): BPIX module 4"
+/analysis/h1/setYaxis 200 "number of entries per bin"
+/analysis/h1/set 201 6 -0.5 5    #cluster size per event (number of pixels): BPIX module 5
+/analysis/h1/setXaxis 201 "cluster size per event (number of pixels): BPIX module 5"
+/analysis/h1/setYaxis 201 "number of entries per bin"
+/analysis/h1/set 202 6 -0.5 5    #cluster size per event (number of pixels): BPIX module 6
+/analysis/h1/setXaxis 202 "cluster size per event (number of pixels): BPIX module 6"
+/analysis/h1/setYaxis 202 "number of entries per bin"
+/analysis/h1/set 203 6 -0.5 5    #cluster size per event (number of pixels): BPIX module 7
+/analysis/h1/setXaxis 203 "cluster size per event (number of pixels): BPIX module 7"
+/analysis/h1/setYaxis 203 "number of entries per bin"
+/analysis/h1/set 204 6 -0.5 5    #cluster size per event (number of pixels): BPIX module 8
+/analysis/h1/setXaxis 204 "cluster size per event (number of pixels): BPIX module 8"
+/analysis/h1/setYaxis 204 "number of entries per bin"
+/analysis/h1/set 205 6 -0.5 5    #cluster size per event (number of pixels): BPIX module 9
+/analysis/h1/setXaxis 205 "cluster size per event (number of pixels): BPIX module 9"
+/analysis/h1/setYaxis 205 "number of entries per bin"
+/analysis/h1/set 206 6 -0.5 5    #cluster size per event (number of pixels): BPIX module 10
+/analysis/h1/setXaxis 206 "cluster size per event (number of pixels): BPIX module 10"
+/analysis/h1/setYaxis 206 "number of entries per bin"
+/analysis/h1/set 207 6 -0.5 5    #cluster size per event (number of pixels): BPIX module 11
+/analysis/h1/setXaxis 207 "cluster size per event (number of pixels): BPIX module 11"
+/analysis/h1/setYaxis 207 "number of entries per bin"
+/analysis/h1/set 208 6 -0.5 5    #cluster size per event (number of pixels): BPIX module 12
+/analysis/h1/setXaxis 208 "cluster size per event (number of pixels): BPIX module 12"
+/analysis/h1/setYaxis 208 "number of entries per bin"
+/analysis/h1/set 209 6 -0.5 5    #cluster size per event (number of pixels): BPIX module 13
+/analysis/h1/setXaxis 209 "cluster size per event (number of pixels): BPIX module 13"
+/analysis/h1/setYaxis 209 "number of entries per bin"
+/analysis/h1/set 210 6 -0.5 5    #cluster size per event (number of pixels): BPIX module 14
+/analysis/h1/setXaxis 210 "cluster size per event (number of pixels): BPIX module 14"
+/analysis/h1/setYaxis 210 "number of entries per bin"
+/analysis/h1/set 211 6 -0.5 5    #cluster size per event (number of pixels): BPIX module 15
+/analysis/h1/setXaxis 211 "cluster size per event (number of pixels): BPIX module 15"
+/analysis/h1/setYaxis 211 "number of entries per bin"
+/analysis/h1/set 212 6 -0.5 5    #cluster size per event (number of pixels): BPIX module 16
+/analysis/h1/setXaxis 212 "cluster size per event (number of pixels): BPIX module 16"
+/analysis/h1/setYaxis 212 "number of entries per bin"
+
+/analysis/h1/set 213 100 -60 -20 mm      #x-value of difference: reconstructed - extrapolated points for the 2S 1st plane
+/analysis/h1/setXaxis 213 "x-value of difference: reconstructed - extrapolated points for the 2S 1st plane (um)"
+/analysis/h1/setYaxis 213 "number of entries per bin"
+/analysis/h1/set 214 100 -100 100 um     #y-value of difference: reconstructed - extrapolated points for the 2S 1st plane
+/analysis/h1/setXaxis 214 "y-value of difference: reconstructed - extrapolated points for the 2S 1st plane (um)"
+/analysis/h1/setYaxis 214 "number of entries per bin"
+/analysis/h1/set 215 100 -60 -20 mm      #x-value of difference: reconstructed - extrapolated points for the 2S 2nd plane
+/analysis/h1/setXaxis 215 "x-value of difference: reconstructed - extrapolated points for the 2S 2nd plane (um)"
+/analysis/h1/setYaxis 215 "number of entries per bin"
+/analysis/h1/set 216 100 -100 100 um     #y-value of difference: reconstructed - extrapolated points for the 2S 2nd plane
+/analysis/h1/setXaxis 216 "y-value of difference: reconstructed - extrapolated points for the 2S 2nd plane (um)"
+/analysis/h1/setYaxis 216 "number of entries per bin"
+
+/analysis/h1/set 217 100 -3 1 cm        #average x-position of primary in pixel module 1
+/analysis/h1/setXaxis 217 "average x-position of primary in pixel module 1 (cm)"
+/analysis/h1/setYaxis 217 "number of entries per bin"
+/analysis/h1/set 218 100 -2 2 cm        #average y-position of primary in pixel module 1
+/analysis/h1/setXaxis 218 "average y-position of primary in pixel module 1 (cm)"
+/analysis/h1/setYaxis 218 "number of entries per bin"
+/analysis/h1/set 219 100 -2 -1 cm       #average z-position of primary in pixel module 1
+/analysis/h1/setXaxis 219 "average z-position of primary in pixel module 1 (cm)"
+/analysis/h1/setYaxis 219 "number of entries per bin"
+/analysis/h1/set 220 100 -3 1 cm        #average x-position of primary in pixel module 2
+/analysis/h1/setXaxis 220 "average x-position of primary in pixel module 2 (cm)"
+/analysis/h1/setYaxis 220 "number of entries per bin"
+/analysis/h1/set 221 100 -2 2 cm        #average y-position of primary in pixel module 2
+/analysis/h1/setXaxis 221 "average y-position of primary in pixel module 2 (cm)"
+/analysis/h1/setYaxis 221 "number of entries per bin"
+/analysis/h1/set 222 100 1 2 cm         #average z-position of primary in pixel module 2
+/analysis/h1/setXaxis 222 "average z-position of primary in pixel module 2 (cm)"
+/analysis/h1/setYaxis 222 "number of entries per bin"
+/analysis/h1/set 223 100 -3 1 cm        #average x-position of primary in pixel module 3
+/analysis/h1/setXaxis 223 "average x-position of primary in pixel module 3 (cm)"
+/analysis/h1/setYaxis 223 "number of entries per bin"
+/analysis/h1/set 224 100 -2 2 cm        #average y-position of primary in pixel module 3
+/analysis/h1/setXaxis 224 "average y-position of primary in pixel module 3 (cm)"
+/analysis/h1/setYaxis 224 "number of entries per bin"
+/analysis/h1/set 225 100 -2 -1 cm       #average z-position of primary in pixel module 3
+/analysis/h1/setXaxis 225 "average z-position of primary in pixel module 3 (cm)"
+/analysis/h1/setYaxis 225 "number of entries per bin"
+/analysis/h1/set 226 100 -3 1 cm        #average x-position of primary in pixel module 4
+/analysis/h1/setXaxis 226 "average x-position of primary in pixel module 4 (cm)"
+/analysis/h1/setYaxis 226 "number of entries per bin"
+/analysis/h1/set 227 100 -2 2 cm        #average y-position of primary in pixel module 4
+/analysis/h1/setXaxis 227 "average y-position of primary in pixel module 4 (cm)"
+/analysis/h1/setYaxis 227 "number of entries per bin"
+/analysis/h1/set 228 100 1 2 cm         #average z-position of primary in pixel module 4
+/analysis/h1/setXaxis 228 "average z-position of primary in pixel module 4 (cm)"
+/analysis/h1/setYaxis 228 "number of entries per bin"
+/analysis/h1/set 229 100 -3 1 cm        #average x-position of primary in pixel module 5
+/analysis/h1/setXaxis 229 "average x-position of primary in pixel module 5 (cm)"
+/analysis/h1/setYaxis 229 "number of entries per bin"
+/analysis/h1/set 230 100 -2 2 cm        #average y-position of primary in pixel module 5
+/analysis/h1/setXaxis 230 "average y-position of primary in pixel module 5 (cm)"
+/analysis/h1/setYaxis 230 "number of entries per bin"
+/analysis/h1/set 231 100 -2 -1 cm       #average z-position of primary in pixel module 5
+/analysis/h1/setXaxis 231 "average z-position of primary in pixel module 5 (cm)"
+/analysis/h1/setYaxis 231 "number of entries per bin"
+/analysis/h1/set 232 100 -3 1 cm        #average x-position of primary in pixel module 6
+/analysis/h1/setXaxis 232 "average x-position of primary in pixel module 6 (cm)"
+/analysis/h1/setYaxis 232 "number of entries per bin"
+/analysis/h1/set 233 100 -2 2 cm        #average y-position of primary in pixel module 6
+/analysis/h1/setXaxis 233 "average y-position of primary in pixel module 6 (cm)"
+/analysis/h1/setYaxis 233 "number of entries per bin"
+/analysis/h1/set 234 100 1 2 cm         #average z-position of primary in pixel module 6
+/analysis/h1/setXaxis 234 "average z-position of primary in pixel module 6 (cm)"
+/analysis/h1/setYaxis 234 "number of entries per bin"
+/analysis/h1/set 235 100 -3 1 cm        #average x-position of primary in pixel module 7
+/analysis/h1/setXaxis 235 "average x-position of primary in pixel module 7 (cm)"
+/analysis/h1/setYaxis 235 "number of entries per bin"
+/analysis/h1/set 236 100 -2 2 cm        #average y-position of primary in pixel module 7
+/analysis/h1/setXaxis 236 "average y-position of primary in pixel module 7 (cm)"
+/analysis/h1/setYaxis 236 "number of entries per bin"
+/analysis/h1/set 237 100 -2 -1 cm       #average z-position of primary in pixel module 7
+/analysis/h1/setXaxis 237 "average z-position of primary in pixel module 7 (cm)"
+/analysis/h1/setYaxis 237 "number of entries per bin"
+/analysis/h1/set 238 100 -3 1 cm        #average x-position of primary in pixel module 8
+/analysis/h1/setXaxis 238 "average x-position of primary in pixel module 8 (cm)"
+/analysis/h1/setYaxis 238 "number of entries per bin"
+/analysis/h1/set 239 100 -2 2 cm        #average y-position of primary in pixel module 8
+/analysis/h1/setXaxis 239 "average y-position of primary in pixel module 8 (cm)"
+/analysis/h1/setYaxis 239 "number of entries per bin"
+/analysis/h1/set 240 100 1 2 cm         #average z-position of primary in pixel module 8
+/analysis/h1/setXaxis 240 "average z-position of primary in pixel module 8 (cm)"
+/analysis/h1/setYaxis 240 "number of entries per bin"
+/analysis/h1/set 241 100 -3 1 cm        #average x-position of primary in pixel module 9
+/analysis/h1/setXaxis 241 "average x-position of primary in pixel module 9 (cm)"
+/analysis/h1/setYaxis 241 "number of entries per bin"
+/analysis/h1/set 242 100 -2 2 cm        #average y-position of primary in pixel module 9
+/analysis/h1/setXaxis 242 "average y-position of primary in pixel module 9 (cm)"
+/analysis/h1/setYaxis 242 "number of entries per bin"
+/analysis/h1/set 243 100 -2 -1 cm       #average z-position of primary in pixel module 9
+/analysis/h1/setXaxis 243 "average z-position of primary in pixel module 9 (cm)"
+/analysis/h1/setYaxis 243 "number of entries per bin"
+/analysis/h1/set 244 100 -3 1 cm        #average x-position of primary in pixel module 10
+/analysis/h1/setXaxis 244 "average x-position of primary in pixel module 10 (cm)"
+/analysis/h1/setYaxis 244 "number of entries per bin"
+/analysis/h1/set 245 100 -2 2 cm        #average y-position of primary in pixel module 10
+/analysis/h1/setXaxis 245 "average y-position of primary in pixel module 10 (cm)"
+/analysis/h1/setYaxis 245 "number of entries per bin"
+/analysis/h1/set 246 100 1 2 cm         #average z-position of primary in pixel module 10
+/analysis/h1/setXaxis 246 "average z-position of primary in pixel module 10 (cm)"
+/analysis/h1/setYaxis 246 "number of entries per bin"
+/analysis/h1/set 247 100 -3 1 cm        #average x-position of primary in pixel module 11
+/analysis/h1/setXaxis 247 "average x-position of primary in pixel module 11 (cm)"
+/analysis/h1/setYaxis 247 "number of entries per bin"
+/analysis/h1/set 248 100 -2 2 cm        #average y-position of primary in pixel module 11
+/analysis/h1/setXaxis 248 "average y-position of primary in pixel module 11 (cm)"
+/analysis/h1/setYaxis 248 "number of entries per bin"
+/analysis/h1/set 249 100 -2 -1 cm       #average z-position of primary in pixel module 11
+/analysis/h1/setXaxis 249 "average z-position of primary in pixel module 11 (cm)"
+/analysis/h1/setYaxis 249 "number of entries per bin"
+/analysis/h1/set 250 100 -3 1 cm        #average x-position of primary in pixel module 12
+/analysis/h1/setXaxis 250 "average x-position of primary in pixel module 12 (cm)"
+/analysis/h1/setYaxis 250 "number of entries per bin"
+/analysis/h1/set 251 100 -2 2 cm        #average y-position of primary in pixel module 12
+/analysis/h1/setXaxis 251 "average y-position of primary in pixel module 12 (cm)"
+/analysis/h1/setYaxis 251 "number of entries per bin"
+/analysis/h1/set 252 100 1 2 cm         #average z-position of primary in pixel module 12
+/analysis/h1/setXaxis 252 "average z-position of primary in pixel module 12 (cm)"
+/analysis/h1/setYaxis 252 "number of entries per bin"
+/analysis/h1/set 253 100 -3 1 cm        #average x-position of primary in pixel module 13
+/analysis/h1/setXaxis 253 "average x-position of primary in pixel module 13 (cm)"
+/analysis/h1/setYaxis 253 "number of entries per bin"
+/analysis/h1/set 254 100 -2 2 cm        #average y-position of primary in pixel module 13
+/analysis/h1/setXaxis 254 "average y-position of primary in pixel module 13 (cm)"
+/analysis/h1/setYaxis 254 "number of entries per bin"
+/analysis/h1/set 255 100 -2 -1 cm       #average z-position of primary in pixel module 13
+/analysis/h1/setXaxis 255 "average z-position of primary in pixel module 13 (cm)"
+/analysis/h1/setYaxis 255 "number of entries per bin"
+/analysis/h1/set 256 100 -3 1 cm        #average x-position of primary in pixel module 14
+/analysis/h1/setXaxis 256 "average x-position of primary in pixel module 14 (cm)"
+/analysis/h1/setYaxis 256 "number of entries per bin"
+/analysis/h1/set 257 100 -2 2 cm        #average y-position of primary in pixel module 14
+/analysis/h1/setXaxis 257 "average y-position of primary in pixel module 14 (cm)"
+/analysis/h1/setYaxis 257 "number of entries per bin"
+/analysis/h1/set 258 100 1 2 cm         #average z-position of primary in pixel module 14
+/analysis/h1/setXaxis 258 "average z-position of primary in pixel module 14 (cm)"
+/analysis/h1/setYaxis 258 "number of entries per bin"
+/analysis/h1/set 259 100 -3 1 cm        #average x-position of primary in pixel module 15
+/analysis/h1/setXaxis 259 "average x-position of primary in pixel module 15 (cm)"
+/analysis/h1/setYaxis 259 "number of entries per bin"
+/analysis/h1/set 260 100 -2 2 cm        #average y-position of primary in pixel module 15
+/analysis/h1/setXaxis 260 "average y-position of primary in pixel module 15 (cm)"
+/analysis/h1/setYaxis 260 "number of entries per bin"
+/analysis/h1/set 261 100 -2 -1 cm       #average z-position of primary in pixel module 15
+/analysis/h1/setXaxis 261 "average z-position of primary in pixel module 15 (cm)"
+/analysis/h1/setYaxis 261 "number of entries per bin"
+/analysis/h1/set 262 100 -3 1 cm        #average x-position of primary in pixel module 16
+/analysis/h1/setXaxis 262 "average x-position of primary in pixel module 16 (cm)"
+/analysis/h1/setYaxis 262 "number of entries per bin"
+/analysis/h1/set 263 100 -2 2 cm        #average y-position of primary in pixel module 16
+/analysis/h1/setXaxis 263 "average y-position of primary in pixel module 16 (cm)"
+/analysis/h1/setYaxis 263 "number of entries per bin"
+/analysis/h1/set 264 100 1 2 cm         #average z-position of primary in pixel module 16
+/analysis/h1/setXaxis 264 "average z-position of primary in pixel module 16 (cm)"
+/analysis/h1/setYaxis 264 "number of entries per bin"
+
+/analysis/h1/set 265 101 -0.01005 0.01005 cm         #Telescope first-layer residuals in global x-direction A'Ax
+/analysis/h1/setXaxis 265 "Telescope first-layer residuals in global x-direction A'Ax (cm)"
+/analysis/h1/setYaxis 265 "number of entries per bin"
+/analysis/h1/set 266 101 -0.01005 0.01005 cm         #Telescope first-layer residuals in global y-direction A'Ay
+/analysis/h1/setXaxis 266 "Telescope first-layer residuals in global y-direction A'Ay (cm)"
+/analysis/h1/setYaxis 266 "number of entries per bin"
+/analysis/h1/set 267 101 -0.01005 0.01005 cm         #Telescope second-layer residuals in global x-direction B'Bx
+/analysis/h1/setXaxis 267 "Telescope second-layer residuals in global x-direction B'Bx (cm)"
+/analysis/h1/setYaxis 267 "number of entries per bin"
+/analysis/h1/set 268 101 -0.01005 0.01005 cm         #Telescope second-layer residuals in global y-direction B'By
+/analysis/h1/setXaxis 268 "Telescope second-layer residuals in global y-direction B'By (cm)"
+/analysis/h1/setYaxis 268 "number of entries per bin"
+/analysis/h1/set 269 101 -0.01005 0.01005 cm         #Telescope third-layer residuals in global x-direction C'Cx
+/analysis/h1/setXaxis 269 "Telescope third-layer residuals in global x-direction C'Cx (cm)"
+/analysis/h1/setYaxis 269 "number of entries per bin"
+/analysis/h1/set 270 101 -0.01005 0.01005 cm         #Telescope third-layer residuals in global y-direction C'Cy
+/analysis/h1/setXaxis 270 "Telescope third-layer residuals in global y-direction C'Cy (cm)"
+/analysis/h1/setYaxis 270 "number of entries per bin"
+/analysis/h1/set 271 101 -0.01005 0.01005 cm         #Telescope fourth-layer residuals in global x-direction D'Dx
+/analysis/h1/setXaxis 271 "Telescope fourth-layer residuals in global x-direction D'Dx (cm)"
+/analysis/h1/setYaxis 271 "number of entries per bin"
+/analysis/h1/set 272 101 -0.01005 0.01005 cm         #Telescope fourth-layer residuals in global y-direction D'Dy
+/analysis/h1/setXaxis 272 "Telescope fourth-layer residuals in global y-direction D'Dy (cm)"
+/analysis/h1/setYaxis 272 "number of entries per bin"
+/analysis/h1/set 273 101 -0.01005 0.01005 cm         #Telescope fifth-layer residuals in global x-direction G'Gx
+/analysis/h1/setXaxis 273 "Telescope fifth-layer residuals in global x-direction G'Gx (cm)"
+/analysis/h1/setYaxis 273 "number of entries per bin"
+/analysis/h1/set 274 101 -0.01005 0.01005 cm         #Telescope fifth-layer residuals in global y-direction G'Gy
+/analysis/h1/setXaxis 274 "Telescope fifth-layer residuals in global y-direction G'Gy (cm)"
+/analysis/h1/setYaxis 274 "number of entries per bin"
+/analysis/h1/set 275 101 -0.01005 0.01005 cm         #Telescope sixth-layer residuals in global x-direction H'Hx
+/analysis/h1/setXaxis 275 "Telescope sixth-layer residuals in global x-direction H'Hx (cm)"
+/analysis/h1/setYaxis 275 "number of entries per bin"
+/analysis/h1/set 276 101 -0.01005 0.01005 cm         #Telescope sixth-layer residuals in global y-direction H'Hy
+/analysis/h1/setXaxis 276 "Telescope sixth-layer residuals in global y-direction H'Hy (cm)"
+/analysis/h1/setYaxis 276 "number of entries per bin"
+/analysis/h1/set 277 101 -0.01005 0.01005 cm         #Telescope seventh-layer residuals in global x-direction I'Ix
+/analysis/h1/setXaxis 277 "Telescope seventh-layer residuals in global x-direction I'Ix (cm)"
+/analysis/h1/setYaxis 277 "number of entries per bin"
+/analysis/h1/set 278 101 -0.01005 0.01005 cm         #Telescope seventh-layer residuals in global y-direction I'Iy
+/analysis/h1/setXaxis 278 "Telescope seventh-layer residuals in global y-direction I'Iy (cm)"
+/analysis/h1/setYaxis 278 "number of entries per bin"
+/analysis/h1/set 279 101 -0.01005 0.01005 cm         #Telescope eighth-layer residuals in global x-direction J'Jx
+/analysis/h1/setXaxis 279 "Telescope eighth-layer residuals in global x-direction J'Jx (cm)"
+/analysis/h1/setYaxis 279 "number of entries per bin"
+/analysis/h1/set 280 101 -0.01005 0.01005 cm         #Telescope eighth-layer residuals in global y-direction J'Jy
+/analysis/h1/setXaxis 280 "Telescope eighth-layer residuals in global y-direction J'Jy (cm)"
+/analysis/h1/setYaxis 280 "number of entries per bin"
+
+/analysis/h1/set 281 101 -0.01005 0.01005 cm     #2S first-plane residuals in local x-direction E'Ex
+/analysis/h1/setXaxis 281 "2S first-plane residuals in local x-direction E'Ex (cm)"
+/analysis/h1/setYaxis 281 "number of entries per bin"
+/analysis/h1/set 282 101 -0.01005 0.01005 cm     #2S first-plane residuals in local y-direction E'Ey
+/analysis/h1/setXaxis 282 "2S first-plane residuals in local y-direction E'Ey (cm)"
+/analysis/h1/setYaxis 282 "number of entries per bin"
+/analysis/h1/set 283 101 -0.01005 0.01005 cm     #2S second-plane residuals in local x-direction F'Fx
+/analysis/h1/setXaxis 283 "2S second-plane residuals in local x-direction F'Fx (cm)"
+/analysis/h1/setYaxis 283 "number of entries per bin"
+/analysis/h1/set 284 101 -0.01005 0.01005 cm     #2S second-plane residuals in local y-direction F'Fy
+/analysis/h1/setXaxis 284 "2S second-plane residuals in local y-direction F'Fy (cm)"
+/analysis/h1/setYaxis 284 "number of entries per bin"
+
+
+
+/analysis/h1/set 285 101 -0.01005 0.01005 cm         #Telescope first-layer residuals in local x-direction A'Ax
+/analysis/h1/setXaxis 285 "Telescope first-layer residuals in local x-direction A'Ax (cm)"
+/analysis/h1/setYaxis 285 "number of entries per bin"
+/analysis/h1/set 286 101 -0.01005 0.01005 cm         #Telescope first-layer residuals in local y-direction A'Ay
+/analysis/h1/setXaxis 286 "Telescope first-layer residuals in local y-direction A'Ay (cm)"
+/analysis/h1/setYaxis 286 "number of entries per bin"
+/analysis/h1/set 287 101 -0.01005 0.01005 cm         #Telescope second-layer residuals in local x-direction B'Bx
+/analysis/h1/setXaxis 287 "Telescope second-layer residuals in local x-direction B'Bx (cm)"
+/analysis/h1/setYaxis 287 "number of entries per bin"
+/analysis/h1/set 288 101 -0.01005 0.01005 cm         #Telescope second-layer residuals in local y-direction B'By
+/analysis/h1/setXaxis 288 "Telescope second-layer residuals in local y-direction B'By (cm)"
+/analysis/h1/setYaxis 288 "number of entries per bin"
+/analysis/h1/set 289 101 -0.01005 0.01005 cm         #Telescope third-layer residuals in local x-direction C'Cx
+/analysis/h1/setXaxis 289 "Telescope third-layer residuals in local x-direction C'Cx (cm)"
+/analysis/h1/setYaxis 289 "number of entries per bin"
+/analysis/h1/set 290 101 -0.01005 0.01005 cm         #Telescope third-layer residuals in local y-direction C'Cy
+/analysis/h1/setXaxis 290 "Telescope third-layer residuals in local y-direction C'Cy (cm)"
+/analysis/h1/setYaxis 290 "number of entries per bin"
+/analysis/h1/set 291 101 -0.01005 0.01005 cm         #Telescope fourth-layer residuals in local x-direction D'Dx
+/analysis/h1/setXaxis 291 "Telescope fourth-layer residuals in local x-direction D'Dx (cm)"
+/analysis/h1/setYaxis 291 "number of entries per bin"
+/analysis/h1/set 292 101 -0.01005 0.01005 cm         #Telescope fourth-layer residuals in local y-direction D'Dy
+/analysis/h1/setXaxis 292 "Telescope fourth-layer residuals in local y-direction D'Dy (cm)"
+/analysis/h1/setYaxis 292 "number of entries per bin"
+/analysis/h1/set 293 101 -0.01005 0.01005 cm         #Telescope fifth-layer residuals in local x-direction G'Gx
+/analysis/h1/setXaxis 293 "Telescope fifth-layer residuals in local x-direction G'Gx (cm)"
+/analysis/h1/setYaxis 293 "number of entries per bin"
+/analysis/h1/set 294 101 -0.01005 0.01005 cm         #Telescope fifth-layer residuals in local y-direction G'Gy
+/analysis/h1/setXaxis 294 "Telescope fifth-layer residuals in local y-direction G'Gy (cm)"
+/analysis/h1/setYaxis 294 "number of entries per bin"
+/analysis/h1/set 295 101 -0.01005 0.01005 cm         #Telescope sixth-layer residuals in local x-direction H'Hx
+/analysis/h1/setXaxis 295 "Telescope sixth-layer residuals in local x-direction H'Hx (cm)"
+/analysis/h1/setYaxis 295 "number of entries per bin"
+/analysis/h1/set 296 101 -0.01005 0.01005 cm         #Telescope sixth-layer residuals in local y-direction H'Hy
+/analysis/h1/setXaxis 296 "Telescope sixth-layer residuals in local y-direction H'Hy (cm)"
+/analysis/h1/setYaxis 296 "number of entries per bin"
+/analysis/h1/set 297 101 -0.01005 0.01005 cm         #Telescope seventh-layer residuals in local x-direction I'Ix
+/analysis/h1/setXaxis 297 "Telescope seventh-layer residuals in local x-direction I'Ix (cm)"
+/analysis/h1/setYaxis 297 "number of entries per bin"
+/analysis/h1/set 298 101 -0.01005 0.01005 cm         #Telescope seventh-layer residuals in local y-direction I'Iy
+/analysis/h1/setXaxis 298 "Telescope seventh-layer residuals in local y-direction I'Iy (cm)"
+/analysis/h1/setYaxis 298 "number of entries per bin"
+/analysis/h1/set 299 101 -0.01005 0.01005 cm         #Telescope eighth-layer residuals in local x-direction J'Jx
+/analysis/h1/setXaxis 299 "Telescope eighth-layer residuals in local x-direction J'Jx (cm)"
+/analysis/h1/setYaxis 299 "number of entries per bin"
+/analysis/h1/set 300 101 -0.01005 0.01005 cm         #Telescope eighth-layer residuals in local y-direction J'Jy
+/analysis/h1/setXaxis 300 "Telescope eighth-layer residuals in local y-direction J'Jy (cm)"
+/analysis/h1/setYaxis 300 "number of entries per bin"
+
+/analysis/h1/set 301 198 0 5 MeV    #continuous eLoss for Layer 1
+/analysis/h1/setXaxis 301 "Energy deposited inside the material for telescope layer 1 (MeV)"
+/analysis/h1/setYaxis 301 "number of entries per bin"
+/analysis/h1/set 302 198 0 5 MeV    #secondary  eLoss for Layer 1
+/analysis/h1/setXaxis 302 "Kinetic energy of secondary particles produced in telescope layer 1 (MeV)"
+/analysis/h1/setYaxis 302 "number of entries per bin"
+/analysis/h1/set 303 198 0 5 MeV    #total eLoss for Layer 1
+/analysis/h1/setXaxis 303 "Total energy lost by beam particles in telescope layer 1 (MeV)"
+/analysis/h1/setYaxis 303 "number of entries per bin"
+
+/analysis/h1/set 304 198 0 5 MeV    #continuous eLoss for Layer 2
+/analysis/h1/setXaxis 304 "Energy deposited inside the material for telescope layer 2 (MeV)"
+/analysis/h1/setYaxis 304 "number of entries per bin"
+/analysis/h1/set 305 198 0 5 MeV    #secondary  eLoss for Layer 2
+/analysis/h1/setXaxis 305 "Kinetic energy of secondary particles produced in telescope layer 2 (MeV)"
+/analysis/h1/setYaxis 305 "number of entries per bin"
+/analysis/h1/set 306 198 0 5 MeV    #total eLoss for Layer 2
+/analysis/h1/setXaxis 306 "Total energy lost by beam particles in telescope layer 2 (MeV)"
+/analysis/h1/setYaxis 306 "number of entries per bin"
+
+/analysis/h1/set 307 198 0 5 MeV    #continuous eLoss for Layer 3
+/analysis/h1/setXaxis 307 "Energy deposited inside the material for telescope layer 3 (MeV)"
+/analysis/h1/setYaxis 307 "number of entries per bin"
+/analysis/h1/set 308 198 0 5 MeV    #secondary  eLoss for Layer 3
+/analysis/h1/setXaxis 308 "Kinetic energy of secondary particles produced in telescope layer 3 (MeV)"
+/analysis/h1/setYaxis 308 "number of entries per bin"
+/analysis/h1/set 309 198 0 5 MeV    #total eLoss for Layer 3
+/analysis/h1/setXaxis 309 "Total energy lost by beam particles in telescope layer 3 (MeV)"
+/analysis/h1/setYaxis 309 "number of entries per bin"
+
+/analysis/h1/set 310 198 0 5 MeV    #continuous eLoss for Layer 4
+/analysis/h1/setXaxis 310 "Energy deposited inside the material for telescope layer 4 (MeV)"
+/analysis/h1/setYaxis 310 "number of entries per bin"
+/analysis/h1/set 311 198 0 5 MeV    #secondary  eLoss for Layer 4
+/analysis/h1/setXaxis 311 "Kinetic energy of secondary particles produced in telescope layer 4 (MeV)"
+/analysis/h1/setYaxis 311 "number of entries per bin"
+/analysis/h1/set 312 198 0 5 MeV    #total eLoss for Layer 4
+/analysis/h1/setXaxis 312 "Total energy lost by beam particles in telescope layer 4 (MeV)"
+/analysis/h1/setYaxis 312 "number of entries per bin"
+
+/analysis/h1/set 313 198 0 5 MeV    #continuous eLoss for Layer 5
+/analysis/h1/setXaxis 313 "Energy deposited inside the material for telescope layer 5 (MeV)"
+/analysis/h1/setYaxis 313 "number of entries per bin"
+/analysis/h1/set 314 198 0 5 MeV    #secondary  eLoss for Layer 5
+/analysis/h1/setXaxis 314 "Kinetic energy of secondary particles produced in telescope layer 5 (MeV)"
+/analysis/h1/setYaxis 314 "number of entries per bin"
+/analysis/h1/set 315 198 0 5 MeV    #total eLoss for Layer 5
+/analysis/h1/setXaxis 315 "Total energy lost by beam particles in telescope layer 5 (MeV)"
+/analysis/h1/setYaxis 315 "number of entries per bin"
+
+/analysis/h1/set 316 198 0 5 MeV    #continuous eLoss for Layer 6
+/analysis/h1/setXaxis 316 "Energy deposited inside the material for telescope layer 6 (MeV)"
+/analysis/h1/setYaxis 316 "number of entries per bin"
+/analysis/h1/set 317 198 0 5 MeV    #secondary  eLoss for Layer 6
+/analysis/h1/setXaxis 317 "Kinetic energy of secondary particles produced in telescope layer 6 (MeV)"
+/analysis/h1/setYaxis 317 "number of entries per bin"
+/analysis/h1/set 318 198 0 5 MeV    #total eLoss for Layer 6
+/analysis/h1/setXaxis 318 "Total energy lost by beam particles in telescope layer 6 (MeV)"
+/analysis/h1/setYaxis 318 "number of entries per bin"
+
+/analysis/h1/set 319 198 0 5 MeV    #continuous eLoss for Layer 7
+/analysis/h1/setXaxis 319 "Energy deposited inside the material for telescope layer 7 (MeV)"
+/analysis/h1/setYaxis 319 "number of entries per bin"
+/analysis/h1/set 320 198 0 5 MeV    #secondary  eLoss for Layer 7
+/analysis/h1/setXaxis 320 "Kinetic energy of secondary particles produced in telescope layer 7 (MeV)"
+/analysis/h1/setYaxis 320 "number of entries per bin"
+/analysis/h1/set 321 198 0 5 MeV    #total eLoss for Layer 7
+/analysis/h1/setXaxis 321 "Total energy lost by beam particles in telescope layer 7 (MeV)"
+/analysis/h1/setYaxis 321 "number of entries per bin"
+
+/analysis/h1/set 322 198 0 5 MeV    #continuous eLoss for Layer 8
+/analysis/h1/setXaxis 322 "Energy deposited inside the material for telescope layer 8 (MeV)"
+/analysis/h1/setYaxis 322 "number of entries per bin"
+/analysis/h1/set 323 198 0 5 MeV    #secondary  eLoss for Layer 8
+/analysis/h1/setXaxis 323 "Kinetic energy of secondary particles produced in telescope layer 8 (MeV)"
+/analysis/h1/setYaxis 323 "number of entries per bin"
+/analysis/h1/set 324 198 0 5 MeV    #total eLoss for Layer 8
+/analysis/h1/setXaxis 324 "Total energy lost by beam particles in telescope layer 8 (MeV)"
+/analysis/h1/setYaxis 324 "number of entries per bin"
+
+/analysis/h1/set 325 6 -0.5 5     #cluster size X for pixel module 1
+/analysis/h1/setXaxis 325 "cluster size X for pixel module 1 (pixels)"
+/analysis/h1/setYaxis 325 "number of entries per bin"
+
+/analysis/h1/set 326 6 -0.5 5     #cluster size X for pixel module 2
+/analysis/h1/setXaxis 326 "cluster size X for pixel module 2 (pixels)"
+/analysis/h1/setYaxis 326 "number of entries per bin"
+
+/analysis/h1/set 327 6 -0.5 5     #cluster size X for pixel module 3
+/analysis/h1/setXaxis 327 "cluster size X for pixel module 3 (pixels)"
+/analysis/h1/setYaxis 327 "number of entries per bin"
+
+/analysis/h1/set 328 6 -0.5 5     #cluster size X for pixel module 4
+/analysis/h1/setXaxis 328 "cluster size X for pixel module 4 (pixels)"
+/analysis/h1/setYaxis 328 "number of entries per bin"
+
+/analysis/h1/set 329 6 -0.5 5     #cluster size X for pixel module 5
+/analysis/h1/setXaxis 329 "cluster size X for pixel module 5 (pixels)"
+/analysis/h1/setYaxis 329 "number of entries per bin"
+
+/analysis/h1/set 330 6 -0.5 5     #cluster size X for pixel module 6
+/analysis/h1/setXaxis 330 "cluster size X for pixel module 6 (pixels)"
+/analysis/h1/setYaxis 330 "number of entries per bin"
+
+/analysis/h1/set 331 6 -0.5 5     #cluster size X for pixel module 7
+/analysis/h1/setXaxis 331 "cluster size X for pixel module 7 (pixels)"
+/analysis/h1/setYaxis 331 "number of entries per bin"
+
+/analysis/h1/set 332 6 -0.5 5     #cluster size X for pixel module 8
+/analysis/h1/setXaxis 332 "cluster size X for pixel module 8 (pixels)"
+/analysis/h1/setYaxis 332 "number of entries per bin"
+
+/analysis/h1/set 333 6 -0.5 5     #cluster size X for pixel module 9
+/analysis/h1/setXaxis 333 "cluster size X for pixel module 9 (pixels)"
+/analysis/h1/setYaxis 333 "number of entries per bin"
+
+/analysis/h1/set 334 6 -0.5 5     #cluster size X for pixel module 10
+/analysis/h1/setXaxis 334 "cluster size X for pixel module 10 (pixels)"
+/analysis/h1/setYaxis 334 "number of entries per bin"
+
+/analysis/h1/set 335 6 -0.5 5     #cluster size X for pixel module 11
+/analysis/h1/setXaxis 335 "cluster size X for pixel module 11 (pixels)"
+/analysis/h1/setYaxis 335 "number of entries per bin"
+
+/analysis/h1/set 336 6 -0.5 5     #cluster size X for pixel module 12
+/analysis/h1/setXaxis 336 "cluster size X for pixel module 12 (pixels)"
+/analysis/h1/setYaxis 336 "number of entries per bin"
+
+/analysis/h1/set 337 6 -0.5 5     #cluster size X for pixel module 13
+/analysis/h1/setXaxis 337 "cluster size X for pixel module 13 (pixels)"
+/analysis/h1/setYaxis 337 "number of entries per bin"
+
+/analysis/h1/set 338 6 -0.5 5     #cluster size X for pixel module 14
+/analysis/h1/setXaxis 338 "cluster size X for pixel module 14 (pixels)"
+/analysis/h1/setYaxis 338 "number of entries per bin"
+
+/analysis/h1/set 339 6 -0.5 5     #cluster size X for pixel module 15
+/analysis/h1/setXaxis 339 "cluster size X for pixel module 15 (pixels)"
+/analysis/h1/setYaxis 339 "number of entries per bin"
+
+/analysis/h1/set 340 6 -0.5 5     #cluster size X for pixel module 16
+/analysis/h1/setXaxis 340 "cluster size X for pixel module 16 (pixels)"
+/analysis/h1/setYaxis 340 "number of entries per bin"
+
+/analysis/h1/set 341 6 -0.5 5     #cluster size Y for pixel module 1
+/analysis/h1/setXaxis 341 "cluster size Y for pixel module 1 (pixels)"
+/analysis/h1/setYaxis 341 "number of entries per bin"
+
+/analysis/h1/set 342 6 -0.5 5     #cluster size Y for pixel module 2
+/analysis/h1/setXaxis 342 "cluster size Y for pixel module 2 (pixels)"
+/analysis/h1/setYaxis 342 "number of entries per bin"
+
+/analysis/h1/set 343 6 -0.5 5     #cluster size Y for pixel module 3
+/analysis/h1/setXaxis 343 "cluster size Y for pixel module 3 (pixels)"
+/analysis/h1/setYaxis 343 "number of entries per bin"
+
+/analysis/h1/set 344 6 -0.5 5     #cluster size Y for pixel module 4
+/analysis/h1/setXaxis 344 "cluster size Y for pixel module 4 (pixels)"
+/analysis/h1/setYaxis 344 "number of entries per bin"
+
+/analysis/h1/set 345 6 -0.5 5     #cluster size Y for pixel module 5
+/analysis/h1/setXaxis 345 "cluster size Y for pixel module 5 (pixels)"
+/analysis/h1/setYaxis 345 "number of entries per bin"
+
+/analysis/h1/set 346 6 -0.5 5     #cluster size Y for pixel module 6
+/analysis/h1/setXaxis 346 "cluster size Y for pixel module 6 (pixels)"
+/analysis/h1/setYaxis 346 "number of entries per bin"
+
+/analysis/h1/set 347 6 -0.5 5     #cluster size Y for pixel module 7
+/analysis/h1/setXaxis 347 "cluster size Y for pixel module 7 (pixels)"
+/analysis/h1/setYaxis 347 "number of entries per bin"
+
+/analysis/h1/set 348 6 -0.5 5     #cluster size Y for pixel module 8
+/analysis/h1/setXaxis 348 "cluster size Y for pixel module 8 (pixels)"
+/analysis/h1/setYaxis 348 "number of entries per bin"
+
+/analysis/h1/set 349 6 -0.5 5     #cluster size Y for pixel module 9
+/analysis/h1/setXaxis 349 "cluster size Y for pixel module 9 (pixels)"
+/analysis/h1/setYaxis 349 "number of entries per bin"
+
+/analysis/h1/set 350 6 -0.5 5     #cluster size Y for pixel module 10
+/analysis/h1/setXaxis 350 "cluster size Y for pixel module 10 (pixels)"
+/analysis/h1/setYaxis 350 "number of entries per bin"
+
+/analysis/h1/set 351 6 -0.5 5     #cluster size Y for pixel module 11
+/analysis/h1/setXaxis 351 "cluster size Y for pixel module 11 (pixels)"
+/analysis/h1/setYaxis 351 "number of entries per bin"
+
+/analysis/h1/set 352 6 -0.5 5     #cluster size Y for pixel module 12
+/analysis/h1/setXaxis 352 "cluster size Y for pixel module 12 (pixels)"
+/analysis/h1/setYaxis 352 "number of entries per bin"
+
+/analysis/h1/set 353 6 -0.5 5     #cluster size Y for pixel module 13
+/analysis/h1/setXaxis 353 "cluster size Y for pixel module 13 (pixels)"
+/analysis/h1/setYaxis 353 "number of entries per bin"
+
+/analysis/h1/set 354 6 -0.5 5     #cluster size Y for pixel module 14
+/analysis/h1/setXaxis 354 "cluster size Y for pixel module 14 (pixels)"
+/analysis/h1/setYaxis 354 "number of entries per bin"
+
+/analysis/h1/set 355 6 -0.5 5     #cluster size Y for pixel module 15
+/analysis/h1/setXaxis 355 "cluster size Y for pixel module 15 (pixels)"
+/analysis/h1/setYaxis 355 "number of entries per bin"
+
+/analysis/h1/set 356 6 -0.5 5     #cluster size Y for pixel module 16
+/analysis/h1/setXaxis 356 "cluster size Y for pixel module 16 (pixels)"
+/analysis/h1/setYaxis 356 "number of entries per bin"
+
+/analysis/h1/set 357 100 0.5 100000.5     #Cluster charge for M3173 (left module of Layer 1)
+/analysis/h1/setXaxis 357 "Cluster charge for M3173, left module of Layer 1 (e)"
+/analysis/h1/setYaxis 357 "Entries/bin"
+
+
+/analysis/h2/setX 1 800 -2.6 2.6 cm
+/analysis/h2/setXaxis 1 "x in global frame for telescope Layer 1 (cm)"
+/analysis/h2/setY 1 800 -2.6 2.6 cm
+/analysis/h2/setYaxis 1 "y in global frame for telescope Layer 1 (cm)"
+/analysis/h2/setZaxis 1 "number of entries per bin"
+
+/analysis/h2/setX 2 800 -2.6 2.6 cm
+/analysis/h2/setXaxis 2 "x in global frame for telescope Layer 2 (cm)"
+/analysis/h2/setY 2 800 -2.6 2.6 cm
+/analysis/h2/setYaxis 2 "y in global frame for telescope Layer 2 (cm)"
+/analysis/h2/setZaxis 2 "number of entries per bin"
+
+/analysis/h2/setX 3 800 -2.6 2.6 cm
+/analysis/h2/setXaxis 3 "x in global frame for telescope Layer 3 (cm)"
+/analysis/h2/setY 3 800 -2.6 2.6 cm
+/analysis/h2/setYaxis 3 "y in global frame for telescope Layer 3 (cm)"
+/analysis/h2/setZaxis 3 "number of entries per bin"
+
+/analysis/h2/setX 4 800 -2.6 2.6 cm
+/analysis/h2/setXaxis 4 "x in global frame for telescope Layer 4 (cm)"
+/analysis/h2/setY 4 800 -2.6 2.6 cm
+/analysis/h2/setYaxis 4 "y in global frame for telescope Layer 4 (cm)"
+/analysis/h2/setZaxis 4 "number of entries per bin"
+
+/analysis/h2/setX 5 800 -2.6 2.6 cm
+/analysis/h2/setXaxis 5 "x in global frame for telescope Layer 5 (cm)"
+/analysis/h2/setY 5 800 -2.6 2.6 cm
+/analysis/h2/setYaxis 5 "y in global frame for telescope Layer 5 (cm)"
+/analysis/h2/setZaxis 5 "number of entries per bin"
+
+/analysis/h2/setX 6 800 -2.6 2.6 cm
+/analysis/h2/setXaxis 6 "x in global frame for telescope Layer 6 (cm)"
+/analysis/h2/setY 6 800 -2.6 2.6 cm
+/analysis/h2/setYaxis 6 "y in global frame for telescope Layer 6 (cm)"
+/analysis/h2/setZaxis 6 "number of entries per bin"
+
+/analysis/h2/setX 7 800 -2.6 2.6 cm
+/analysis/h2/setXaxis 7 "x in global frame for telescope Layer 7 (cm)"
+/analysis/h2/setY 7 800 -2.6 2.6 cm
+/analysis/h2/setYaxis 7 "y in global frame for telescope Layer 7 (cm)"
+/analysis/h2/setZaxis 7 "number of entries per bin"
+
+/analysis/h2/setX 8 800 -2.6 2.6 cm
+/analysis/h2/setXaxis 8 "x in global frame for telescope Layer 8 (cm)"
+/analysis/h2/setY 8 800 -2.6 2.6 cm
+/analysis/h2/setYaxis 8 "y in global frame for telescope Layer 8 (cm)"
+/analysis/h2/setZaxis 8 "number of entries per bin"
+
+/analysis/h2/setX 9 800 -2.6 2.6 cm
+/analysis/h2/setXaxis 9 "x in global frame for DUT Sensor 1 (cm)"
+/analysis/h2/setY 9 800 -2.6 2.6 cm
+/analysis/h2/setYaxis 9 "y in global frame for DUT Sensor 1 (cm)"
+/analysis/h2/setZaxis 9 "number of entries per bin"
+
+/analysis/h2/setX 10 800 -2.6 2.6 cm
+/analysis/h2/setXaxis 10 "x in global frame for DUT Sensor 2 (cm)"
+/analysis/h2/setY 10 800 -2.6 2.6 cm
+/analysis/h2/setYaxis 10 "y in global frame for DUT Sensor 2 (cm)"
+/analysis/h2/setZaxis 10 "number of entries per bin"
+
+
+/analysis/h2/setX 11 800 -2.6 2.6 cm
+/analysis/h2/setXaxis 11 "x in local frame for telescope Layer 1 (cm)"
+/analysis/h2/setY 11 800 -2.6 2.6 cm
+/analysis/h2/setYaxis 11 "y in local frame for telescope Layer 1 (cm)"
+/analysis/h2/setZaxis 11 "number of entries per bin"
+
+/analysis/h2/setX 12 800 -2.6 2.6 cm
+/analysis/h2/setXaxis 12 "x in local frame for telescope Layer 2 (cm)"
+/analysis/h2/setY 12 800 -2.6 2.6 cm
+/analysis/h2/setYaxis 12 "y in local frame for telescope Layer 2 (cm)"
+/analysis/h2/setZaxis 12 "number of entries per bin"
+
+/analysis/h2/setX 13 800 -2.6 2.6 cm
+/analysis/h2/setXaxis 13 "x in local frame for telescope Layer 3 (cm)"
+/analysis/h2/setY 13 800 -2.6 2.6 cm
+/analysis/h2/setYaxis 13 "y in local frame for telescope Layer 3 (cm)"
+/analysis/h2/setZaxis 13 "number of entries per bin"
+
+/analysis/h2/setX 14 800 -2.6 2.6 cm
+/analysis/h2/setXaxis 14 "x in local frame for telescope Layer 4 (cm)"
+/analysis/h2/setY 14 800 -2.6 2.6 cm
+/analysis/h2/setYaxis 14 "y in local frame for telescope Layer 4 (cm)"
+/analysis/h2/setZaxis 14 "number of entries per bin"
+
+/analysis/h2/setX 15 800 -2.6 2.6 cm
+/analysis/h2/setXaxis 15 "x in local frame for telescope Layer 5 (cm)"
+/analysis/h2/setY 15 800 -2.6 2.6 cm
+/analysis/h2/setYaxis 15 "y in local frame for telescope Layer 5 (cm)"
+/analysis/h2/setZaxis 15 "number of entries per bin"
+
+/analysis/h2/setX 16 800 -2.6 2.6 cm
+/analysis/h2/setXaxis 16 "x in local frame for telescope Layer 6 (cm)"
+/analysis/h2/setY 16 800 -2.6 2.6 cm
+/analysis/h2/setYaxis 16 "y in local frame for telescope Layer 6 (cm)"
+/analysis/h2/setZaxis 16 "number of entries per bin"
+
+/analysis/h2/setX 17 800 -2.6 2.6 cm
+/analysis/h2/setXaxis 17 "x in local frame for telescope Layer 7 (cm)"
+/analysis/h2/setY 17 800 -2.6 2.6 cm
+/analysis/h2/setYaxis 17 "y in local frame for telescope Layer 7 (cm)"
+/analysis/h2/setZaxis 17 "number of entries per bin"
+
+/analysis/h2/setX 18 800 -2.6 2.6 cm
+/analysis/h2/setXaxis 18 "x in local frame for telescope Layer 8 (cm)"
+/analysis/h2/setY 18 800 -2.6 2.6 cm
+/analysis/h2/setYaxis 18 "y in local frame for telescope Layer 8 (cm)"
+/analysis/h2/setZaxis 18 "number of entries per bin"
+
+/analysis/h2/setX 19 800 -2.6 2.6 cm
+/analysis/h2/setXaxis 19 "x in local frame for DUT Sensor 1 (cm)"
+/analysis/h2/setY 19 800 -2.6 2.6 cm
+/analysis/h2/setYaxis 19 "y in local frame for DUT Sensor 1 (cm)"
+/analysis/h2/setZaxis 19 "number of entries per bin"
+
+/analysis/h2/setX 20 800 -2.6 2.6 cm
+/analysis/h2/setXaxis 20 "x in local frame for DUT Sensor 2 (cm)"
+/analysis/h2/setY 20 800 -2.6 2.6 cm
+/analysis/h2/setYaxis 20 "y in local frame for DUT Sensor 2 (cm)"
+/analysis/h2/setZaxis 20 "number of entries per bin"
+
+/analysis/h2/setX 21 417 0 416.5
+/analysis/h2/setXaxis 21 "col"
+/analysis/h2/setY 21 161 0 160.5
+/analysis/h2/setYaxis 21 "row"
+/analysis/h2/setZaxis 21 "number of entries per bin"
+
+/analysis/h2/setX 22 417 0 416.5
+/analysis/h2/setXaxis 22 "col"
+/analysis/h2/setY 22 161 0 160.5
+/analysis/h2/setYaxis 22 "row"
+/analysis/h2/setZaxis 22 "number of entries per bin"
+
+/analysis/h2/setX 23 417 0 416.5
+/analysis/h2/setXaxis 23 "col"
+/analysis/h2/setY 23 161 0 160.5
+/analysis/h2/setYaxis 23 "row"
+/analysis/h2/setZaxis 23 "number of entries per bin"
+
+/analysis/h2/setX 24 417 0 416.5
+/analysis/h2/setXaxis 24 "col"
+/analysis/h2/setY 24 161 0 160.5
+/analysis/h2/setYaxis 24 "row"
+/analysis/h2/setZaxis 24 "number of entries per bin"
+
+/analysis/h2/setX 25 417 0 416.5
+/analysis/h2/setXaxis 25 "col"
+/analysis/h2/setY 25 161 0 160.5
+/analysis/h2/setYaxis 25 "row"
+/analysis/h2/setZaxis 25 "number of entries per bin"
+
+/analysis/h2/setX 26 417 0 416.5
+/analysis/h2/setXaxis 26 "col"
+/analysis/h2/setY 26 161 0 160.5
+/analysis/h2/setYaxis 26 "row"
+/analysis/h2/setZaxis 26 "number of entries per bin"
+
+/analysis/h2/setX 27 417 0 416.5
+/analysis/h2/setXaxis 27 "col"
+/analysis/h2/setY 27 161 0 160.5
+/analysis/h2/setYaxis 27 "row"
+/analysis/h2/setZaxis 27 "number of entries per bin"
+
+/analysis/h2/setX 28 417 0 416.5
+/analysis/h2/setXaxis 28 "col"
+/analysis/h2/setY 28 161 0 160.5
+/analysis/h2/setYaxis 28 "row"
+/analysis/h2/setZaxis 28 "number of entries per bin"
+
+/analysis/h2/setX 29 417 0 416.5
+/analysis/h2/setXaxis 29 "col"
+/analysis/h2/setY 29 161 0 160.5
+/analysis/h2/setYaxis 29 "row"
+/analysis/h2/setZaxis 29 "number of entries per bin"
+
+/analysis/h2/setX 30 417 0 416.5
+/analysis/h2/setXaxis 30 "col"
+/analysis/h2/setY 30 161 0 160.5
+/analysis/h2/setYaxis 30 "row"
+/analysis/h2/setZaxis 30 "number of entries per bin"
+
+/analysis/h2/setX 31 417 0 416.5
+/analysis/h2/setXaxis 31 "col"
+/analysis/h2/setY 31 161 0 160.5
+/analysis/h2/setYaxis 31 "row"
+/analysis/h2/setZaxis 31 "number of entries per bin"
+
+/analysis/h2/setX 32 417 0 416.5
+/analysis/h2/setXaxis 32 "col"
+/analysis/h2/setY 32 161 0 160.5
+/analysis/h2/setYaxis 32 "row"
+/analysis/h2/setZaxis 32 "number of entries per bin"
+
+/analysis/h2/setX 33 417 0 416.5
+/analysis/h2/setXaxis 33 "col"
+/analysis/h2/setY 33 161 0 160.5
+/analysis/h2/setYaxis 33 "row"
+/analysis/h2/setZaxis 33 "number of entries per bin"
+
+/analysis/h2/setX 34 417 0 416.5
+/analysis/h2/setXaxis 34 "col"
+/analysis/h2/setY 34 161 0 160.5
+/analysis/h2/setYaxis 34 "row"
+/analysis/h2/setZaxis 34 "number of entries per bin"
+
+/analysis/h2/setX 35 417 0 416.5
+/analysis/h2/setXaxis 35 "col"
+/analysis/h2/setY 35 161 0 160.5
+/analysis/h2/setYaxis 35 "row"
+/analysis/h2/setZaxis 35 "number of entries per bin"
+
+/analysis/h2/setX 36 417 0 416.5
+/analysis/h2/setXaxis 36 "col"
+/analysis/h2/setY 36 161 0 160.5
+/analysis/h2/setYaxis 36 "row"
+/analysis/h2/setZaxis 36 "number of entries per bin"
+
+#
+/run/printProgress 10000
+#
+#/random/setSeeds 9 9
+/run/beamOn 32536 #32536
+/vis/reviewKeptEvents

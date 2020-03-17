@@ -1,0 +1,37 @@
+# $Id: pionPlus.mac 2016-12-15 pasenov
+#
+# macro file for PhaseII.cc
+#
+/control/verbose 2
+/run/verbose 2
+#
+/testem/det/setMatD Silicon
+/testem/det/setSizeZW 5 cm
+/testem/det/setSizeZ1 320 um
+/testem/det/setSizeZ2 320 um
+#
+/run/setCut 10 um
+#
+/run/initialize
+#
+/gun/particle pi+ 
+/gun/energy 120 MeV
+#
+/analysis/setFileName pionPlus2
+# 
+/analysis/h1/set 1 100 0 300 keV    #continuous eLoss for Detector 1
+/analysis/h1/set 2 100 0 300 keV    #continuous eLoss for Detector 2
+/analysis/h1/set 3 100 0 300 keV    #secondary  eLoss for Detector 1
+/analysis/h1/set 4 100 0 300 keV    #secondary  eLoss for Detector 2
+/analysis/h1/set 5 100 0 300 keV    #total eLoss for Detector 1
+/analysis/h1/set 6 100 0 300 keV    #total eLoss for Detector 2
+/analysis/h1/set 7 100 0 300 keV    #e- energy spectrum for Detector 1
+/analysis/h1/set 8 100 0 300 keV    #e- energy spectrum for Detector 2
+/analysis/h1/set 9 100 0 300 keV    #gamma energy spectrum for Detector 1
+/analysis/h1/set 10 100 0 300 keV   #gamma energy spectrum for Detector 2
+/analysis/h1/set 11 100 0 10 mm	    #step size for Detector 1
+/analysis/h1/set 12 100 0 10 mm	    #step size for Detector 2
+#
+/run/printProgress 100000
+#
+/run/beamOn 1000000

@@ -1,0 +1,20 @@
+# $Id: PhaseII.in 82401 2014-06-18 14:43:54Z gcosmo $
+#
+# macro file for PhaseII.cc
+#
+/control/verbose 2
+/run/verbose 2
+#
+/testem/det/setMat Silicon
+/testem/det/setSize 320 um
+#
+/testem/phys/addPhysics standard
+#
+/run/setCut 10 um
+#
+/run/initialize
+#
+/gun/particle pi+
+/gun/energy 120 GeV
+#
+/run/beamOn 100000

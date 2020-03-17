@@ -1,0 +1,26 @@
+# $Id: csda.mac 82401 2014-06-18 14:43:54Z gcosmo $
+#
+# macro file for PhaseII.cc
+#
+/control/verbose 2
+/run/verbose 2
+#
+/testem/det/setMat Silicon
+###/testem/det/setMat Water_vapor
+/testem/det/setSize 320 um
+#
+/run/setCut 100 km
+#
+/run/initialize
+#
+/process/eLoss/fluct false
+/process/eLoss/StepFunction 1 1 mm
+#
+/gun/particle e- 
+/gun/energy 20 MeV
+#
+/run/beamOn 1
+#
+/testem/stepMax 10 um
+#
+/run/beamOn 1
